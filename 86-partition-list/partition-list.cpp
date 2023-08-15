@@ -12,13 +12,17 @@ class Solution {
 public:
     void insert(ListNode** root, int item)
 {
-    ListNode* temp = new ListNode;
+    ListNode* temp = new ListNode(item);
     ListNode* ptr;
-    temp->val = item;
+    // temp->val = item; //   item|NULL  
     temp->next = NULL;
   
+
+    // agr root null hai toh direct jor do
     if (*root == NULL)
         *root = temp;
+
+    // but agr kuch element hai toh end me jana padega     
     else {
         ptr = *root;
         while (ptr->next != NULL)
